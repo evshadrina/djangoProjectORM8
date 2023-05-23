@@ -1,0 +1,16 @@
+{% extends 'movies/base.html' %}
+
+   <title>{% block title %} Все отзывы {% endblock %}</title>
+
+{% block content %}
+ <h2> Список всех отзывов </h2>
+    <ul>
+     {% for fb in fb_all %}
+
+         <li>  {{ fb.name }} {{ fb.surname }} {{ fb.feedback }} </li>
+
+     {% endfor %}
+    </ul>
+    <p> количество отзывов OK =  {{ col }} </p>
+{% endblock %}
+

@@ -1,0 +1,10 @@
+{% extends 'movies/base.html' %}
+
+   <title>{% block title %} Инфа о фильме-{{ movie.name }} {% endblock %}</title>
+
+{% block content %}
+ <h2> Фильм  -  {{ movie.name }}</h2>
+ <h2> Рейтинг  -  {{ movie.raiting }}</h2>
+
+
+{% endblock %}

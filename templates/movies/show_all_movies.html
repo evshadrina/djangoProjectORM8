@@ -1,0 +1,24 @@
+{% extends 'movies/base.html' %}
+
+   <title>{% block title %} Все фильмы {% endblock %}</title>
+
+{% block content %}
+ <h2> Список фильмов </h2>
+    <ul>
+     {% for movie in movies %}
+
+         <li>  {{ movie.name }} {{ movie.raiting }}</li>
+
+     {% endfor %}
+    </ul>
+
+    <h2> Список фильмов с ссылкой на фильм </h2>
+    <ul>
+     {% for movie in movies %}
+
+         <li>  <a href="{% url 'movieApp:movie-detail' movie.id %}"> {{ movie.name}} </a>, рейтинг-{{ movie.raiting }}  </li>
+
+    {% endfor %}
+    </ul>
+
+{% endblock %}

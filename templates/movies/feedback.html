@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'feedback/forms.css' %}">
+</head>
+<body>
+
+
+<form {% url 'movieApp:feedback' %} method="POST">   <!--   action не нужно ONLY form method="POST"-->
+    {% csrf_token %}
+    {% for field in form %}
+
+        <div class="form-style {% if field.errors %} errors {% endif %} ">
+            {{ field.label_tag }}
+            {{ field.errors }}
+            {{ field }}
+        </div>
+
+    {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
